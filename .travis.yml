@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t app -f Dockerfile.dev .
+  - docker build -t gloria101987/app -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true app npm run test -- --coverage
+  - docker run gloria101987/app npm test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
